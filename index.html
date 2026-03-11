@@ -174,7 +174,7 @@
 
     <ol class="action-steps">
       <li>Read the attached letter</li>
-      <li>Sign the petition and return it to this email</li>
+      <li>Sign the petition and return it to <span class="email-highlight"><a href="mailto:usafa.ned.stark@gmail.com">usafa.ned.stark@gmail.com</a><button class="copy-btn" onclick="copyEmail(this)">Copy</button></span></li>
       <li>Share it with fellow graduates in your network</li>
     </ol>
 
@@ -249,5 +249,17 @@
     <a href="AOG Membership Petition.pdf" download>Download &amp; Sign the Petition (PDF)</a>
   </div>
 
+  <script>
+    function copyEmail(btn) {
+      navigator.clipboard.writeText('usafa.ned.stark@gmail.com').then(function () {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
